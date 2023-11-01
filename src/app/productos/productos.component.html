@@ -16,11 +16,11 @@
             <p class="card-text">Precio: $5000</p>
             <div class="col-lg-7">
               <div class="input-group mb-3">
-                <button class="input-group-text btn btn-primary">
+                <button (click)="disminuir()" class="input-group-text btn btn-primary">
                   <strong>-</strong>
                 </button>
-                <input type="text" class="form-control" value="0" />
-                <button class="input-group-text btn btn-primary">
+                <input [(ngModel)]="cantidadProducto" type="text" class="form-control"/>
+                <button (click)="aumentar()" class="input-group-text btn btn-primary">
                   <strong>+</strong>
                 </button>
               </div>

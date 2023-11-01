@@ -10,6 +10,10 @@ export class ProductosComponent {
 
   productos:any;
 
+  indiceUno:number[];
+
+  cantidadProducto:number = 0;
+
   constructor(private clienteService:ApiServicioService){
 
     this.clienteService.obtenerProducto().subscribe( respuesta =>{
@@ -17,6 +21,18 @@ export class ProductosComponent {
       this.productos= respuesta;
     });
 
+  }
+
+  aumentar(){
+    this.cantidadProducto = this.cantidadProducto + 1;
+    console.log(this.indiceUno);
+  }
+
+  disminuir(){
+    if(this.cantidadProducto !== 0){
+      this.cantidadProducto = this.cantidadProducto - 1;
+    }
+    
   }
 
 }
